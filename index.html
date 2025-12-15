@@ -2,48 +2,76 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>MED OS</title>
-
+<title>Messenger Demo</title>
 <style>
 body{
-  background:#121212;
-  color:#ffffff;
-  font-family:Arial, sans-serif;
-  font-size:18px;
+  background:#f0f2f5;
+  font-family: Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
-
-button{
+.box{
+  background:#fff;
+  padding:30px;
+  width:320px;
+  border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  text-align:center;
+}
+.logo{
+  font-size:40px;
+  color:#0084ff;
+  margin-bottom:10px;
+}
+input{
+  width:100%;
   padding:10px;
-  margin:5px;
-  font-size:18px;
+  margin:8px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
 }
-
-button:focus{
-  outline:3px solid #00ffcc;
+button{
+  width:100%;
+  padding:10px;
+  background:#0084ff;
+  color:white;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+}
+.error{
+  color:red;
+  margin-top:10px;
+  display:none;
 }
 </style>
 </head>
 
 <body>
+<div class="box">
+  <div class="logo">💬</div>
+  <h3>Connexion Messenger (Démo)</h3>
 
-<header>
-  <h1>MED OS – Système Linux</h1>
-</header>
+  <input type="email" id="email" placeholder="Adresse e-mail">
+  <input type="password" id="password" placeholder="Mot de passe">
 
-<main>
-  <button aria-label="Ouvrir le terminal">
-    🖥 Terminal
-  </button>
+  <button onclick="login()">Connexion</button>
+  <div class="error" id="error">❌ Erreur de connexion</div>
+</div>
 
-  <button aria-label="Ouvrir le bloc-notes">
-    📝 Bloc‑notes
-  </button>
-</main>
+<script>
+function login(){
+  const email = document.getElementById("email").value;
+  const pass  = document.getElementById("password").value;
 
-<footer>
-  <p>© MED OS – Accessible pour tous</p>
-</footer>
+  console.log("Email (démo):", email);
+  console.log("Mot de passe (démo):", pass);
 
+  document.getElementById("error").style.display = "block";
+}
+</script>
 </body>
 </html>
- 
